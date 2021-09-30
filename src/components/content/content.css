@@ -1,0 +1,12 @@
+.card-container {
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+}
+
+/* **************************************************************** */
+
+.car-container {
+	position: absolute;
+	background: #2c302d;
+}
