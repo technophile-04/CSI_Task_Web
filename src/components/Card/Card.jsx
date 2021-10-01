@@ -4,12 +4,19 @@ import './card.css';
 const Card = ({ joke }) => {
 	return (
 		<>
-			<li class="cards_item">
-				<div class="card">
-					<div class="card_content">
-						<h2 class="card_title">Card Grid Layout</h2>
-						<p class="card_text">{joke.joke ? joke.joke : joke.setup}</p>
-						<button class="btn card_btn">Read More</button>
+			<li className="cards_item">
+				<div className="card">
+					<div className="card_content">
+						{joke.type === 'single' ? (
+							<h2 className="card_title card_joke">{joke.joke}</h2>
+						) : (
+							<>
+								<h2 className="card_title">{joke.setup}</h2>
+								<p className="card_text">{joke.delivery}</p>
+							</>
+						)}
+
+						<button className="btn card_btn">Add me to favourites</button>
 					</div>
 				</div>
 			</li>

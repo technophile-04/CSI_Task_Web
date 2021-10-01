@@ -78,8 +78,12 @@ h1 {
 
 .card_text {
 	color: #ffffff;
-	font-size: 0.875rem;
+	font-size: 0.975rem;
 	line-height: 1.5;
-	margin-bottom: 1.25rem;
-	font-weight: 400;
+	margin-bottom: 1.05rem;
+	font-weight: 600;
+}
+
+.card_joke {
+	margin-bottom: 1rem;
 }
