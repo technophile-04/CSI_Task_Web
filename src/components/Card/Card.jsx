@@ -1,7 +1,25 @@
 import React from 'react';
 import './card.css';
 
-const Card = ({ joke }) => {
+const Card = ({ joke, setJokes, jokes, favouriteJokes, setFavouriteJokes }) => {
+	const handleClick = (e) => {
+		e.preventDefault();
+
+		if (setJokes) {
+			const removedJokes = jokes.filter((item) => item.id !== joke.id);
+			const isJokePresent = favouriteJokes.find((item) => item.id === joke.id);
+
+			if (!isJokePresent) {
+				setFavouriteJokes([...favouriteJokes, joke]);
+			}
+
+			setJokes(removedJokes);
+		} else {
+			const removedJokes = favouriteJokes.filter((item) => item.id !== joke.id);
+			setFavouriteJokes(removedJokes);
+		}
+	};
+
 	return (
 		<>
 			<li className="cards_item">
@@ -16,7 +34,9 @@ const Card = ({ joke }) => {
 							</>
 						)}
 
-						<button className="btn card_btn">Add me to favourites</button>
+						<button className="btn card_btn" onClick={handleClick}>
+							{setJokes ? 'Add me to favourites' : 'Remove joke'}
+						</button>
 					</div>
 				</div>
 			</li>
