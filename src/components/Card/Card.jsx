@@ -1,37 +1,19 @@
 import React from 'react';
 import './card.css';
 
-const Card = () => {
+const Card = ({ joke }) => {
 	return (
-		<div class="card__container">
-			<div class="card">
-				<div class="card__content">
-					<h3 class="card__header">Card 1</h3>
-					<p class="card__info">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					</p>
-					<button class="card__button">Read now</button>
+		<>
+			<li class="cards_item">
+				<div class="card">
+					<div class="card_content">
+						<h2 class="card_title">Card Grid Layout</h2>
+						<p class="card_text">{joke.joke ? joke.joke : joke.setup}</p>
+						<button class="btn card_btn">Read More</button>
+					</div>
 				</div>
-			</div>
-			<div class="card">
-				<div class="card__content">
-					<h3 class="card__header">Card 2</h3>
-					<p class="card__info">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					</p>
-					<button class="card__button">Read now</button>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card__content">
-					<h3 class="card__header">Card 3</h3>
-					<p class="card__info">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					</p>
-					<button class="card__button">Read now</button>
-				</div>
-			</div>
-		</div>
+			</li>
+		</>
 	);
 };
 

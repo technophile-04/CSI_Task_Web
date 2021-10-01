@@ -1,14 +1,16 @@
 import React from 'react';
 import Card from '../Card/Card';
 import './content.css';
+import { jokesObj } from '../sampleJokes';
 
 const Content = () => {
 	return (
 		<div className="card-container">
-			<Card />
-			<Card />
-			<Card />
-			<Card />
+			<ul class="cards">
+				{jokesObj.jokes?.map((joke) => (
+					<Card joke={joke} />
+				))}
+			</ul>
 		</div>
 	);
 };
