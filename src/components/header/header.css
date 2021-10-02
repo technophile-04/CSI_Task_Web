@@ -5,7 +5,10 @@
 .header-container__block {
 	display: flex;
 	justify-content: space-around;
-	border: 2px solid red;
+	border: 2px solid #ccb440;
+	background-color: #3300324a;
+	border-radius: 30px;
+	margin-top: 1rem;
 }
 
 .header-container__title {
