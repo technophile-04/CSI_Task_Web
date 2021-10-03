@@ -16,18 +16,22 @@ const Content = ({ favouriteJokes, setFavouriteJokes }) => {
 
 	return (
 		<div className="card-container">
-			<ul class="cards">
-				{jokes?.map((joke) => (
-					<Card
-						joke={joke}
-						key={joke.id}
-						setJokes={setJokes}
-						jokes={jokes}
-						favouriteJokes={favouriteJokes}
-						setFavouriteJokes={setFavouriteJokes}
-					/>
-				))}
-			</ul>
+			{jokes.length ? (
+				<ul class="cards">
+					{jokes?.map((joke) => (
+						<Card
+							joke={joke}
+							key={joke.id}
+							setJokes={setJokes}
+							jokes={jokes}
+							favouriteJokes={favouriteJokes}
+							setFavouriteJokes={setFavouriteJokes}
+						/>
+					))}
+				</ul>
+			) : (
+				<h1>Loading...</h1>
+			)}
 		</div>
 	);
 };
